@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BookIt — Experiences & Slots
 
-## Getting Started
+Full-stack assignment: browse experiences, view availability, apply promo codes, and complete bookings end-to-end.
 
-First, run the development server:
+## Live Links
+- **Frontend (Vercel):** https://YOUR-APP.vercel.app
+- **Backend (Render):** https://YOUR-API.onrender.com
+- **API Examples:**
+  - GET /experiences → https://YOUR-API.onrender.com/experiences
+  - GET /experiences/:id
+  - POST /promo/validate
+  - POST /bookings
 
+## Stack
+- **Frontend:** Next.js + TypeScript + TailwindCSS
+- **Backend:** Node.js (Express), MongoDB (Mongoose)
+- **Hosting:** Vercel (FE), Render (BE)
+- **Images:** Unsplash/Pexels (royalty-free)
+
+## Local Setup
+
+### Backend
 ```bash
+cd server
+npm install
+# create .env
+# MONGO_URI=your_atlas_uri
+# PORT=5000
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# seed once
+node data/seed.js
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Frontend
+# from project root (Next.js)
+npm install
+# create .env.local
+# NEXT_PUBLIC_API_BASE=http://localhost:5000
+npm run dev
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Deploy
+Backend (Render)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Build: npm install
 
-## Learn More
+Start: npm start
 
-To learn more about Next.js, take a look at the following resources:
+Env:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+MONGO_URI=...
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+FRONTEND_ORIGIN=https://YOUR-APP.vercel.app
 
-## Deploy on Vercel
+Frontend (Vercel)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Env:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+NEXT_PUBLIC_API_BASE=https://YOUR-API.onrender.com
+
+API
+
+GET /experiences → list
+
+GET /experiences/:id → details + days/slots
+
+POST /promo/validate → { code, price, qty } → { valid, discount }
+
+POST /bookings → { expId, name, email, date, time, qty, total } → { ref }
+
+Notes
+
+Validation: basic (name/email), sold-out guard on server, promo codes: SAVE10, FLAT100.
+
+CORS: locked to frontend origin in production.
+
+Attribution: Images sourced from Unsplash/Pexels for demo only.
