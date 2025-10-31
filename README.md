@@ -3,10 +3,10 @@
 Full-stack assignment: browse experiences, view availability, apply promo codes, and complete bookings end-to-end.
 
 ## Live Links
-- **Frontend (Vercel):** https://YOUR-APP.vercel.app
-- **Backend (Render):** https://YOUR-API.onrender.com
+- **Frontend (Vercel):** https://bookit-ruby-nu.vercel.app
+- **Backend (Render):** https://bookit-4nh6.onrender.com
 - **API Examples:**
-  - GET /experiences → https://YOUR-API.onrender.com/experiences
+  - GET /experiences → https://bookit-4nh6.onrender.com/experiences
   - GET /experiences/:id
   - POST /promo/validate
   - POST /bookings
@@ -24,7 +24,7 @@ Full-stack assignment: browse experiences, view availability, apply promo codes,
 cd server
 npm install
 # create .env
-# MONGO_URI=your_atlas_uri
+# MONGO_URI=MONGO_URI=mongodb+srv://mabhinay136:Il87UL1KGsCM9ih9@cluster0.opx6hio.mongodb.net/?appName=Cluster0
 # PORT=5000
 npm run dev
 # seed once
@@ -34,7 +34,7 @@ Frontend
 # from project root (Next.js)
 npm install
 # create .env.local
-# NEXT_PUBLIC_API_BASE=http://localhost:5000
+# NEXT_PUBLIC_API_BASE=https://bookit-4nh6.onrender.com
 npm run dev
 
 Deploy
@@ -48,13 +48,13 @@ Env:
 
 MONGO_URI=...
 
-FRONTEND_ORIGIN=https://YOUR-APP.vercel.app
+FRONTEND_ORIGIN=https://bookit-ruby-nu.vercel.app
 
 Frontend (Vercel)
 
 Env:
 
-NEXT_PUBLIC_API_BASE=https://YOUR-API.onrender.com
+NEXT_PUBLIC_API_BASE=https://bookit-4nh6.onrender.com
 
 API
 
