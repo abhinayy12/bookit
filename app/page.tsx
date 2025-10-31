@@ -38,7 +38,7 @@ export default function Page() {
     <section className="py-6">
       <div className="grid md:grid-cols-3 gap-6">
         {filtered.map((e) => (
-          <ExperienceCard key={e.id || e._id} exp={e} />
+          <ExperienceCard key={(e as any).id || (e as any)._id} exp={e} />
         ))}
         {filtered.length === 0 && (
           <p className="col-span-full text-center text-gray-500">
