@@ -23,9 +23,6 @@ Full-stack assignment: browse experiences, view availability, apply promo codes,
 ```bash
 cd server
 npm install
-# create .env
-# MONGO_URI=MONGO_URI=mongodb+srv://mabhinay136:Il87UL1KGsCM9ih9@cluster0.opx6hio.mongodb.net/?appName=Cluster0
-# PORT=5000
 npm run dev
 # seed once
 node data/seed.js
